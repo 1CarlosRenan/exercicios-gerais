@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+
+    <style>
+        section{
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <section class="CEP">
+        <form action="">
+            <label for="cep">CEP</label>
+            <input id="cep" type="number">
+            <label for="logradouro">Logradouro</label>
+            <input id="logradouro" type="text" readonly>
+            <label for="bairro">Bairro</label>
+            <input id="bairro" type="text" readonly>
+            <label for="localidade">Cidade</label>
+            <input id="localidade" type="text" readonly>
+            <label for="uf">Estado</label>
+            <input id="uf" type="text" readonly>
+        </form>
+        <button>Endereço Completo</button>
+    </section>
+    <section class="blockchain">
+        <div>
+            <span>Atualizado a cada 30s:</span>
+            <span class="valor">000,00</span> 
+        </div>
+    </section>
+    <section class="piadaRandom">
+        <div>
+            <span class="piada">Carregando piada...</span> 
+        </div>
+        <button>Próxima</button>
+    </section>
+    <script src="./ex-0603-fetch.js"></script>
+</body>
+</html>
