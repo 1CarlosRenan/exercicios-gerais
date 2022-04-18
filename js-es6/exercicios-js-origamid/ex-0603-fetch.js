@@ -3,11 +3,18 @@
 // e o endereço completo é retornado ao clicar em buscar
 
 const inputs = document.querySelectorAll('.CEP [readonly]');
-const btn = document.querySelector('.CEP button');
+const btn = document.querySelector('.CEP .button');
+const cepInput = document.querySelector('.CEP #cep');
 
-function getCEP() {
-    const CEP = document.querySelector('.CEP #cep').value;
-    fetch(`https://viacep.com.br/ws/${CEP}/json/`)
+function handleClick(event){
+    event.preventDefault();
+
+    const cep = cepInput.value;
+    getCEP(cep);
+}
+
+function getCEP(cep) {
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
         .then(r => {
             return r.json();
         }).then(dados => {
@@ -17,7 +24,7 @@ function getCEP() {
         })
 }
 
-btn.addEventListener('click', getCEP)
+btn.addEventListener('click', handleClick)
 
 // Utilizando a API https://blockchain.info/ticker
 // retorne no DOM o valor de compra da bitcoin and reais.
@@ -30,7 +37,7 @@ function atualizarValor() {
         .then(r => {
             return r.json()
         }).then(valores => {
-            valor.innerText = valores.BRL.buy;
+            valor.innerText = ('R$ ' + valores.BRL.buy).replace('.',',');
         })
 }
 atualizarValor()
@@ -50,7 +57,7 @@ function atualizarPiada() {
     .then(r => {
         return r.json()
     }).then(dadosPiada => {
-        piada.innerText = dadosPiada.value;
+        piada.innerText = '"' + dadosPiada.value + '"';
     })
 }
 atualizarPiada();
