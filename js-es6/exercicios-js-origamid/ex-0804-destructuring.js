@@ -8,7 +8,7 @@ const {backgroundColor, color, margin} = btnStyles;
 let cursoAtivo = 'JavaScript';
 let cursoInativo = 'HTML';
 
-[cursoAtivo, cursoInativo] = ['React JS', 'WordPress como CMS']
+[cursoAtivo, cursoInativo] = [cursoInativo, cursoAtivo]
 
 // Corrija o erro abaixo
 const cachorro = {
